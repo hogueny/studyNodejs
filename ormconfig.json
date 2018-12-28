@@ -6,18 +6,15 @@
    "password": "1111",
    "database": "test2",
    "synchronize": true,
-   "logging": false,
+   "logging": true,
    "entities": [
-      "src/entity/**/*.ts"
-   ],
-   "migrations": [
-      "src/migration/**/*.ts"
+      "dist/entity/**/*.js"
    ],
    "subscribers": [
-      "src/subscriber/**/*.ts"
+      "dist/subscriber/**/*.js"
    ],
    "cli": {
-      "entitiesDir": "src/entity",
-      "subscribersDir": "src/subscriber"
+      "entitiesDir": "dist/entity",
+      "subscribersDir": "dist/subscriber"
    }
 }

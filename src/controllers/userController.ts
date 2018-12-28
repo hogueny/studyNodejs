@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { User } from "../src/entity/User";
+import { User } from "../entity/User";
 
 export async function userCreateAction(request:Request, response:Response){
     try{
@@ -19,5 +19,7 @@ export async function userCreateAction(request:Request, response:Response){
         console.log("User Data Saved");
         response.status(201).json(result);
 
+    }catch(e){
+        console.log("Create error!!");
     }
 }
