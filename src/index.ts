@@ -32,7 +32,7 @@ export function stopServer() {
         console.log("sql", { msg: "Database disconnected", value: null });
     });
 }
-
+//test
 // Middleware action
 function setMiddleWares() {
     app.use(cors({ origin: true }));
