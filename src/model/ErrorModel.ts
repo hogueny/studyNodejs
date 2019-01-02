@@ -1,5 +1,3 @@
-import { Mongos } from "typeorm";
-
 export class ErrorModel{
     private msg : string;
     private code : string;
