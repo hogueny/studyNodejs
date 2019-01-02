@@ -5,6 +5,7 @@ interface RouterInterface {
     path : string,
     method : Method,
     action : Function
+    middleware? : Function
 }
 
 interface CustomRequest extends Request {

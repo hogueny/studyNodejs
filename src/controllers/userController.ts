@@ -11,8 +11,6 @@ import { NextFunction } from "connect";
 import { CustomRequest } from "../util/interface";
 import { checkValidation, userSchema } from "../util/joi";
 import { bcryptConfig } from "../config/Bcrypt";
-import { request } from "https";
-import { func } from "joi";
 
 export async function userCreateAction(request:Request, response:Response){
     try{
@@ -121,7 +119,7 @@ export async function userUpdateAction(request: Request, response: Response){
     }
 }
 
-export async function userDeleteByAction(request: Request, response: Response){
+export async function userDeleteByEmail(request: Request, response: Response){
     try{
         const user = await User.findOne(request.params.email);
         if(!user){
@@ -131,7 +129,7 @@ export async function userDeleteByAction(request: Request, response: Response){
         await User.remove(user);
         response.status(24);
     }catch(e){
-        console.error("userDeleteByAction is error : ",e)
+        console.error("userDeleteByEmail is error : ",e)
         ErrorHandle(request,response,e);
     }
 }

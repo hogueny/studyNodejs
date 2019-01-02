@@ -132,7 +132,7 @@ function userUpdateAction(request, response) {
     });
 }
 exports.userUpdateAction = userUpdateAction;
-function userDeleteByAction(request, response) {
+function userDeleteByEmail(request, response) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const user = yield User_1.User.findOne(request.params.email);
@@ -144,12 +144,12 @@ function userDeleteByAction(request, response) {
             response.status(24);
         }
         catch (e) {
-            console.error("userDeleteByAction is error : ", e);
+            console.error("userDeleteByEmail is error : ", e);
             ErrorHandle_1.ErrorHandle(request, response, e);
         }
     });
 }
-exports.userDeleteByAction = userDeleteByAction;
+exports.userDeleteByEmail = userDeleteByEmail;
 function getUserByToken(request, response, next) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
