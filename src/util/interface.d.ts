@@ -6,3 +6,7 @@ interface RouterInterface {
     method : Method,
     action : Function
 }
+
+interface CustomRequest extends Request {
+    uuid: string
+}
