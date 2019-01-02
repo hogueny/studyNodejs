@@ -183,7 +183,7 @@ export async function renewalToken(request: CustomRequest, response: Response) {
 
 export async function changeMyInfo(request: CustomRequest, response: Response) {
     try {
-        const uuid: string = req.uuid;
+        const uuid: string = request.uuid;
         const user: User = await User.findOne({
             where: {
                 uuid: uuid
@@ -192,10 +192,10 @@ export async function changeMyInfo(request: CustomRequest, response: Response) {
         if (!user) {
             throw new ErrorModel(404, errorCode.notFound, category.input, "user not found");
         }
-        user.name = req.body.name === undefined ? user.name : req.body.name;
-        user.password = req.body.password === undefined ? user.password : await bcrypt.hash(req.body.password, bcryptConfig.salt);
-        user.age = req.body.age === undefined ? user.age : req.body.age;
-        user.email = req.body.email === undefined ? user.email : req.body.email;
+        user.name = request.body.name === undefined ? user.name : request.body.name;
+        user.password = request.body.password === undefined ? user.password : await bcrypt.hash(request.body.password, bcryptConfig.salt);
+        user.age = request.body.age === undefined ? user.age : request.body.age;
+        user.email = request.body.email === undefined ? user.email : request.body.email;
         user.modDate = new Date();
         const result = await User.save(user);
         response.status(200).json(result);

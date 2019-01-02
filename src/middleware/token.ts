@@ -52,7 +52,7 @@ export const refreshToken = (req: any, res: express.Response, next: express.Next
             token,
             JWTconfig.refreshToken.signature,
             {
-                algorithms: [JWTConfig.algorithms],
+                algorithms: [JWTconfig.algorithms],
                 maxAge: JWTconfig.refreshToken.maxAge,
                 issuer: JWTconfig.issuer,
                 subject: JWTconfig.refreshToken.subject

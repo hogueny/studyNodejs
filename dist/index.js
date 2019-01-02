@@ -42,6 +42,8 @@ function stopServer() {
     }));
 }
 exports.stopServer = stopServer;
+//test2
+// Middleware action
 function setMiddleWares() {
     app.use(cors({ origin: true }));
     app.use(bodyParser.json());
@@ -54,7 +56,7 @@ function setMiddleWares() {
         next(err);
     });
 }
-// register all application routes
+// ALL router action
 function registerAPI() {
     router_1.AppRoutes.forEach(route => {
         app[route.method](route.path, (request, response, next) => {

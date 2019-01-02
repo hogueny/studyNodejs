@@ -9,4 +9,5 @@ exports.AppRoutes = [
         action: Home_1.home
     }
 ];
+//
 //# sourceMappingURL=router.js.map
