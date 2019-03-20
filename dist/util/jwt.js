@@ -1,31 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//make Token
 const jwt = require("jsonwebtoken");
 const signature_1 = require("../config/signature");
-exports.sign = (payload, option) => {
-    return jwt.sign(payload, signature_1.JWTconfig.accessToken.signature, option); // jwt.sign(payloac, secretOrPrivateKey, option)
+exports.sign = (payload, options) => {
+    return jwt.sign(payload, signature_1.JWTConfig.accessToken.signature, options);
 };
-/*
-jwt.sign({
-    data: 'foobar'
-  }, 'secret', { expiresIn: '1h' });
-
-  data : uuid , secret : signature , expiresIn : maxAge
-
-*/
 exports.makeUserJWT = (user) => {
-    return jwt.sign({ uuid: user.uuid }, signature_1.JWTconfig.accessToken.signature, {
-        issuer: signature_1.JWTconfig.issuer,
-        subject: signature_1.JWTconfig.accessToken.subject,
-        expiresIn: signature_1.JWTconfig.accessToken.maxAge
+    return jwt.sign({ uuid: user.uuid }, signature_1.JWTConfig.accessToken.signature, {
+        issuer: signature_1.JWTConfig.issuer,
+        subject: signature_1.JWTConfig.accessToken.subject,
+        expiresIn: signature_1.JWTConfig.accessToken.maxAge
     });
 };
 exports.makeUserRefreshJWT = (user) => {
-    return jwt.sign({ uuid: user.uuid }, signature_1.JWTconfig.refreshToken.signature, {
-        issuer: signature_1.JWTconfig.issuer,
-        subject: signature_1.JWTconfig.refreshToken.subject,
-        expiresIn: signature_1.JWTconfig.refreshToken.maxAge
+    return jwt.sign({ uuid: user.uuid }, signature_1.JWTConfig.refreshToken.signature, {
+        issuer: signature_1.JWTConfig.issuer,
+        subject: signature_1.JWTConfig.refreshToken.subject,
+        expiresIn: signature_1.JWTConfig.refreshToken.maxAge
     });
 };
 //# sourceMappingURL=jwt.js.map

@@ -1,17 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.JWTconfig = {
+exports.JWTConfig = {
     accessToken: {
         signature: "maetan",
         maxAge: "1h",
         subject: "accessToken"
     },
     refreshToken: {
-        signature: "maetan2",
+        signature: "maetan3",
         maxAge: "1d",
         subject: "refreshToken"
     },
-    algorithms: "RS256",
+    algorithms: "HS256",
     issuer: "maetan"
 };
 //# sourceMappingURL=signature.js.map
