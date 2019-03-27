@@ -5,28 +5,12 @@ const ErrorModel_1 = require("../model/ErrorModel");
 const ErrorCode_1 = require("../config/ErrorCode");
 exports.userSchema = joi.object().keys({
     name: joi.string().min(3).max(30).required(),
-    password: joi.string().required(),
-    age: joi.number().min(1).required(),
+    password: joi.string().regex(/^[a-zA-Z0-9]{3,30}$/),
+    age: joi.string().min(1).max(100),
     email: joi.string().email({ minDomainAtoms: 2 }).required()
 });
-exports.boardSchema = joi.object().keys({
-    name: joi.string().min(3).max(30).required()
-});
-exports.boardSchemaUpdate = joi.object().keys({
-    name: joi.string().min(3).max(30).required()
-});
-exports.messageSchema = joi.object().keys({
-    title: joi.string().min(3).max(30).required(),
-    contents: joi.string().required(),
-    boardId: joi.number().required()
-});
-exports.messageSchemaUpdate = joi.object().keys({
-    title: joi.string().min(3).max(30),
-    contents: joi.string(),
-    boardId: joi.number().required()
-});
 exports.checkValidation = (target, schema) => {
-    console.log(`target : `, target);
+    console.log('target : ', target);
     const result = joi.validate(target, schema);
     console.log("result : ", result.error);
     if (result.error) {

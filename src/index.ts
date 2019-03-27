@@ -1,13 +1,11 @@
 import * as express from 'express';
 import { Request, Response } from 'express';
-import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
-import * as errorHandler from "errorhandler";
+import * as cookieParser from 'cookie-parser';
 import * as http from 'http';
-import { AppRoutes } from "./routes";
 import * as cors from 'cors';
-import { Connection, createConnection, getConnectionOptions } from "typeorm";
-import { checkToken } from './middleware/token';
+import { AppRoutes } from "./routes/router";
+import { Connection,createConnection,getConnectionOptions} from "typeorm";
 
 const app: any = express();
 const server: http.Server = http.createServer(app);
@@ -34,10 +32,10 @@ export function stopServer() {
         console.log("sql", { msg: "Database disconnected", value: null });
     });
 }
-
+//test2
+// Middleware action
 function setMiddleWares() {
     app.use(cors({ origin: true }));
-    app.use(errorHandler());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({
         extended: true
@@ -49,22 +47,15 @@ function setMiddleWares() {
     });
 }
 
-// register all application routes
+// ALL router action
 function registerAPI() {
     AppRoutes.forEach(route => {
-        if (route.middleware) {
-            app[route.method](route.path, route.middleware, (request: Request, response: Response, next: Function) => {
-                route.action(request, response)
-                    .then(() => next)
-                    .catch(err => next(err));
-            });
-        } else {
             app[route.method](route.path, (request: Request, response: Response, next: Function) => {
                 route.action(request, response)
                     .then(() => next)
                     .catch(err => next(err));
             });
-        }
+        
     });
 }
 

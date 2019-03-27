@@ -1,14 +1,14 @@
-export const JWTConfig = {
-    accessToken: {
-        signature: "maetan",
-        maxAge: "1h",
-        subject: "accessToken"
+export const JWTconfig = {
+    accessToken : {
+        signature : "maetan",
+        maxAge : "1h",
+        subject : "accessToken"
     },
-    refreshToken: {
-        signature: "maetan3",
-        maxAge: "1d",
-        subject: "refreshToken"
+    refreshToken : {
+        signature : "maetan2",
+        maxAge : "1d",
+        subject : "refreshToken"
     },
-    algorithms: "HS256",
-    issuer: "maetan"
+    algorithms : "RS256",
+    issuer : "maetan"
 }

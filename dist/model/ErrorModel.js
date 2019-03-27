@@ -7,61 +7,29 @@ class ErrorModel {
         this.category = category;
         this.msg = msg;
     }
-    /**
-     * Getter $msg
-     * @return {string}
-     */
     get $msg() {
         return this.msg;
     }
-    /**
-     * Getter $code
-     * @return {string}
-     */
     get $code() {
         return this.code;
     }
-    /**
-     * Getter $category
-     * @return {string}
-     */
     get $category() {
         return this.category;
     }
-    /**
-     * Getter $status
-     * @return {number}
-     */
     get $status() {
         return this.status;
     }
-    /**
-     * Setter $msg
-     * @param {string} value
-     */
     set $msg(value) {
-        this.msg = value;
+        this.msg;
     }
-    /**
-     * Setter $code
-     * @param {string} value
-     */
     set $code(value) {
-        this.code = value;
+        this.code;
     }
-    /**
-     * Setter $category
-     * @param {string} value
-     */
     set $category(value) {
-        this.category = value;
+        this.category;
     }
-    /**
-     * Setter $status
-     * @param {number} value
-     */
     set $status(value) {
-        this.status = value;
+        this.status;
     }
 }
 exports.ErrorModel = ErrorModel;

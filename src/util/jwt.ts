@@ -1,23 +1,30 @@
+//make Token
 import * as jwt from 'jsonwebtoken';
+import { JWTconfig } from "../config/signature";
 import { User } from '../entity/User';
-import { JWTConfig } from '../config/signature';
 
-export const sign = (payload: {}, options: {}) => {
-    return jwt.sign(payload, JWTConfig.accessToken.signature, options);
+export const sign = (payload: {}, option: {}) => {
+    return jwt.sign(payload, JWTconfig.accessToken.signature, option);  // jwt.sign(payloac, secretOrPrivateKey, option)
 }
+/*
+jwt.sign({
+    data: 'foobar'
+  }, 'secret', { expiresIn: '1h' });
 
-export const makeUserJWT = (user: User) => {
-    return jwt.sign({uuid: user.uuid}, JWTConfig.accessToken.signature, {
-        issuer: JWTConfig.issuer,
-        subject: JWTConfig.accessToken.subject,
-        expiresIn: JWTConfig.accessToken.maxAge
+  data : uuid , secret : signature , expiresIn : maxAge
+
+*/
+export const makeUserJWT = (user : User) => {
+    return jwt.sign({uuid : user.uuid}, JWTconfig.accessToken.signature, {
+        issuer: JWTconfig.issuer,
+        subject: JWTconfig.accessToken.subject,
+        expiresIn: JWTconfig.accessToken.maxAge
     });
 }
-
 export const makeUserRefreshJWT = (user: User) => {
-    return jwt.sign({uuid: user.uuid}, JWTConfig.refreshToken.signature, {
-        issuer: JWTConfig.issuer,
-        subject: JWTConfig.refreshToken.subject,
-        expiresIn: JWTConfig.refreshToken.maxAge
+    return jwt.sign({uuid : user.uuid}, JWTconfig.refreshToken.signature,{
+        issuer: JWTconfig.issuer,
+        subject: JWTconfig.refreshToken.subject,
+        expiresIn: JWTconfig.refreshToken.maxAge
     });
 }

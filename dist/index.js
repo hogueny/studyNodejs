@@ -9,12 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
-const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const errorHandler = require("errorhandler");
+const cookieParser = require("cookie-parser");
 const http = require("http");
-const routes_1 = require("./routes");
 const cors = require("cors");
+const router_1 = require("./routes/router");
 const typeorm_1 = require("typeorm");
 const app = express();
 const server = http.createServer(app);
@@ -43,9 +42,10 @@ function stopServer() {
     }));
 }
 exports.stopServer = stopServer;
+//test2
+// Middleware action
 function setMiddleWares() {
     app.use(cors({ origin: true }));
-    app.use(errorHandler());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({
         extended: true
@@ -56,23 +56,14 @@ function setMiddleWares() {
         next(err);
     });
 }
-// register all application routes
+// ALL router action
 function registerAPI() {
-    routes_1.AppRoutes.forEach(route => {
-        if (route.middleware) {
-            app[route.method](route.path, route.middleware, (request, response, next) => {
-                route.action(request, response)
-                    .then(() => next)
-                    .catch(err => next(err));
-            });
-        }
-        else {
-            app[route.method](route.path, (request, response, next) => {
-                route.action(request, response)
-                    .then(() => next)
-                    .catch(err => next(err));
-            });
-        }
+    router_1.AppRoutes.forEach(route => {
+        app[route.method](route.path, (request, response, next) => {
+            route.action(request, response)
+                .then(() => next)
+                .catch(err => next(err));
+        });
     });
 }
 if (require.main === module) {

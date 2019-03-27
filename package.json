@@ -3,34 +3,29 @@
    "version": "0.0.3",
    "private": true,
    "scripts": {
-      "ho": "./node_modules/.bin/tsc && WHO=ho node ./dist/index.js",
-      "kth": "./node_modules/.bin/tsc && WHO=kth node ./dist/index.js",
-      "docker": "./node_modules/.bin/tsc && WHO=docker node ./dist/index.js"
+      "start": "./node_modules/.bin/tsc && node ./dist/index.js"
    },
    "dependencies": {
-      "bcrypt": "^3.0.2",
+      "bcrypt": "^3.0.3",
+      "bcryptjs": "^2.4.3",
       "body-parser": "^1.18.3",
       "cookie-parser": "~1.4.3",
       "cors": "^2.8.5",
-      "errorhandler": "^1.5.0",
       "express": "^4.16.4",
-      "joi": "^14.3.0",
+      "joi": "^14.3.1",
       "jsonwebtoken": "^8.4.0",
-      "morgan": "^1.9.1",
       "mysql": "^2.16.0",
       "reflect-metadata": "^0.1.12",
-      "serve-favicon": "~2.4.5",
       "typeorm": "0.2.9",
       "typescript": "^3.2.1"
    },
    "devDependencies": {
-      "@types/bcrypt": "^3.0.0",
-      "@types/cookie-parser": "^1.4.1",
-      "@types/debug": "0.0.31",
-      "@types/express": "^4.16.0",
+      "@types/cors": "^2.8.4",
       "@types/joi": "^14.0.1",
       "@types/jsonwebtoken": "^8.3.0",
-      "@types/morgan": "^1.7.35",
+      "@types/bcrypt": "^3.0.0",
+      "@types/cookie-parser": "^1.4.1",
+      "@types/express": "^4.16.0",
       "@types/node": "^8.0.29",
       "ts-node": "3.3.0"
    }

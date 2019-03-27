@@ -1,78 +1,20 @@
-[
-  {
-    "name": "docker",
-    "type": "mysql",
-    "host": "db",
-    "port": 3306,
-    "username": "root",
-    "password": "1111",
-    "database": "test1",
-    "synchronize": true,
-    "charset": "utf8mb4",
-    "logging": true,
-    "entities": [
+{
+   "type": "mysql",
+   "host": "localhost",
+   "port": 3306,
+   "username": "root",
+   "password": "1111",
+   "database": "test2",
+   "synchronize": true,
+   "logging": true,
+   "entities": [
       "dist/entity/**/*.js"
-    ],
-    "migrations": [
-      "dist/migration/**/*.js"
-    ],
-    "subscribers": [
+   ],
+   "subscribers": [
       "dist/subscriber/**/*.js"
-    ],
-    "cli": {
+   ],
+   "cli": {
       "entitiesDir": "dist/entity",
-      "migrationsDir": "dist/migration",
       "subscribersDir": "dist/subscriber"
-    }
-  },
-  {
-    "name": "ho",
-    "type": "mysql",
-    "host": "localhost",
-    "port": 3306,
-    "username": "root",
-    "password": "1111",
-    "database": "test1",
-    "synchronize": true,
-    "logging": true,
-    "entities": [
-      "dist/entity/**/*.js"
-    ],
-    "migrations": [
-      "dist/migration/**/*.js"
-    ],
-    "subscribers": [
-      "dist/subscriber/**/*.js"
-    ],
-    "cli": {
-      "entitiesDir": "dist/entity",
-      "migrationsDir": "dist/migration",
-      "subscribersDir": "dist/subscriber"
-    }
-  },
-  {
-    "name": "prod",
-    "type": "mysql",
-    "host": "maetan.cykxajlh8f3n.ap-northeast-2.rds.amazonaws.com",
-    "port": 3306,
-    "username": "maetan31",
-    "password": "wndtkdqpscl!",
-    "database": "test1",
-    "synchronize": true,
-    "logging": true,
-    "entities": [
-      "dist/entity/**/*.js"
-    ],
-    "migrations": [
-      "dist/migration/**/*.js"
-    ],
-    "subscribers": [
-      "dist/subscriber/**/*.js"
-    ],
-    "cli": {
-      "entitiesDir": "dist/entity",
-      "migrationsDir": "dist/migration",
-      "subscribersDir": "dist/subscriber"
-    }
-  }
-]
+   }
+}

@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-const Message_1 = require("./Message");
 let User = class User extends typeorm_1.BaseEntity {
 };
 __decorate([
@@ -50,10 +49,6 @@ __decorate([
     typeorm_1.Column({ type: "datetime", nullable: false }),
     __metadata("design:type", Date)
 ], User.prototype, "modDate", void 0);
-__decorate([
-    typeorm_1.OneToMany(type => Message_1.Message, messgae => messgae.user, { lazy: true }),
-    __metadata("design:type", Array)
-], User.prototype, "messages", void 0);
 User = __decorate([
     typeorm_1.Entity()
 ], User);
