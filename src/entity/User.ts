@@ -1,4 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, Generated, BaseEntity } from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, BaseEntity, Generated, ManyToMany, JoinTable, OneToMany} from "typeorm";
+import { Message } from "./Message";
+
 @Entity()
 export class User extends BaseEntity {
 
@@ -29,5 +31,7 @@ export class User extends BaseEntity {
 
     @Column({type: "datetime", nullable: false})
     modDate: Date;   // 변경날짜
-}
 
+    @OneToMany(type => Message, message => message.user, {lazy: true})
+    messages: Message[];
+}

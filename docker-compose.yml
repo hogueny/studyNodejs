@@ -1,0 +1,39 @@
+version: "3.5" # 설치된 docker 버전에 따라 다릅니다!
+services:
+  server:
+    container_name: server
+    build: . # Dockerfile이 위치한 경로
+    ports:
+      - "3000:3031" # 연결할 포트
+    networks: # 각 컨테이너를 연결하는 네트워크
+      - backend
+    links:
+      - db
+  
+  db:
+    image: mysql:5.7
+    container_name: mysql-5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    networks: # 각 컨테이너를 연결하는 네트워크
+        - backend
+    environment:
+      MYSQL_DATABASE: "test1"
+      MYSQL_USER: "root"
+      MYSQL_ROOT_PASSWORD: "1111"
+
+  nginx:
+    container_name: nginx
+    build: 
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "3031:80"
+    networks:
+      - backend
+    depends_on:
+      - server
+networks:
+  backend:
+    driver: bridge

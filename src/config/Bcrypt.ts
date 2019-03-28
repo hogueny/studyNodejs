@@ -1,3 +1,3 @@
 export const bcryptConfig = {
-    salt : 10
+    salt: 10
 }
