@@ -109,7 +109,13 @@ exports.AppRoutes = [
     {
         path: "/message",
         method: enum_1.Method.GET,
-        action: MessageController_1.getUserMessages
+        action: MessageController_1.getUserMessages,
+        middleware: token_1.checkToken
+    },
+    {
+        path: "/board/message/:messageId",
+        method: enum_1.Method.GET,
+        action: MessageController_1.getMessageDetail
     }
 ];
 //# sourceMappingURL=routes.js.map
