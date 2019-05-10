@@ -1,4 +1,4 @@
-# study-maetan
+# study-Nodejs 
 
 
 ## 서버
@@ -15,11 +15,12 @@
 - 비동기
 
 서버
-- 회원가입, 로그인, 탈퇴, 로그아웃, 수정 (JWT)
-- 게시판 
+- 회원가입, 로그인, 탈퇴, 로그아웃, 수정 (JWT) = CRUD API
+- 게시판 (pagination)
 
 웹
-- 폼만 제공
+- 부트스트랩으로 디자인
+- Vuejs로 API적용 및 간단한 디자인
 ----------------------
 
 소스트리 사용법
@@ -28,40 +29,16 @@ JWT란?
 
 express + typescript 연동
 
+package.json을 항상 유의하자
+ormconfig를 통해 db에 접근함
 
 
-----
-typeorm 으로 User 테이블 만들고
-
-CRUD API 작성 --- 3일
-
-코드리뷰
-
-그거에 대한 공부?
 
 ---------------------
-
-12/03 ~
-
-typeorm 이용 user table CRUD API 작성
-(12/05 - insert남음)
-작업
 - UserAction 통합하기
 - clean code 사용하기
 
 공부
 - http method 
-- Validation check
- 
-
- --------------------
- 12/10 ~
- vue + axios 이용 위에서 만들어본 API 호출하기
- Validation check
- vue에서 잘못된 값이 서버로 왔을 때, 서버에서 방어해주는 코드 추가.
- npm jsonwebtokn 이용하여 토큰 만들기.
- 서버 에러 핸들링.
- 
--------
-
-브랜치 전략 - git flow 가 보편적
+- Validation check 
+- 브랜치 전략 - git flow 가 보편적
