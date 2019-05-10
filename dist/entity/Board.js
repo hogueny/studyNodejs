@@ -22,6 +22,10 @@ __decorate([
     __metadata("design:type", String)
 ], Board.prototype, "name", void 0);
 __decorate([
+    typeorm_1.Column({ type: "varchar", nullable: false, default: "normal" }),
+    __metadata("design:type", String)
+], Board.prototype, "role", void 0);
+__decorate([
     typeorm_1.Column({ type: "datetime", nullable: true }),
     __metadata("design:type", Date)
 ], Board.prototype, "regDate", void 0);

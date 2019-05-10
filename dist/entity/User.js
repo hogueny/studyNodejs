@@ -51,7 +51,7 @@ __decorate([
     __metadata("design:type", Date)
 ], User.prototype, "modDate", void 0);
 __decorate([
-    typeorm_1.OneToMany(type => Message_1.Message, messgae => messgae.user, { lazy: true }),
+    typeorm_1.OneToMany(type => Message_1.Message, message => message.user, { lazy: true }),
     __metadata("design:type", Array)
 ], User.prototype, "messages", void 0);
 User = __decorate([

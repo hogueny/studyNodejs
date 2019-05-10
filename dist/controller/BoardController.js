@@ -37,6 +37,7 @@ function boardCreate(request, response) {
             board.modDate = new Date();
             board.regDate = new Date();
             board.name = request.body.name;
+            board.role = request.body.role;
             const result = yield Board_1.Board.save(board);
             response.status(201).json(result);
         }
@@ -74,6 +75,7 @@ function boardUpdate(request, response) {
             }
             board.modDate = new Date();
             board.name = request.body.name;
+            board.role = request.body.role;
             const result = yield Board_1.Board.save(board);
             response.status(200).json(result);
         }

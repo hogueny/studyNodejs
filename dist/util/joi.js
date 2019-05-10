@@ -10,10 +10,12 @@ exports.userSchema = joi.object().keys({
     email: joi.string().email({ minDomainAtoms: 2 }).required()
 });
 exports.boardSchema = joi.object().keys({
-    name: joi.string().min(3).max(30).required()
+    name: joi.string().min(3).max(30).required(),
+    role: joi.string().required()
 });
 exports.boardSchemaUpdate = joi.object().keys({
-    name: joi.string().min(3).max(30).required()
+    name: joi.string().min(3).max(30).required(),
+    role: joi.string().required()
 });
 exports.messageSchema = joi.object().keys({
     title: joi.string().min(3).max(30).required(),
