@@ -9,7 +9,7 @@
 - github
 - 언어 선택 node
 - vscode
-- mysql(5.7) -> localhost(내컴), aws rds
+- mysql(5.7) -> localhost, aws rds
 - 개발 스테이지 개념
 - typescript
 - 비동기
@@ -23,9 +23,6 @@
 - Vuejs로 API적용 및 간단한 디자인
 ----------------------
 
-소스트리 사용법
-git 사용법
-JWT란?
 
 express + typescript 연동
 
