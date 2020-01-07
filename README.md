@@ -8,9 +8,9 @@
 - source tree
 - github
 - 언어 선택 node
-- vscode
+- vscode 또는 webstorm 이용
 - mysql(5.7) -> localhost, aws rds
-- 개발 스테이지 개념
+- 개발 스테이지 개념(local, dev, integration, qa, staging, production)
 - typescript
 - 비동기
 
@@ -19,7 +19,7 @@
 - 게시판 (pagination)
 
 웹
-- 부트스트랩으로 디자인
+- 부트스트랩으로 디자인(간단하게)
 - Vuejs로 API적용 및 간단한 디자인
 ----------------------
 
@@ -39,3 +39,9 @@ ormconfig를 통해 db에 접근함
 - http method 
 - Validation check 
 - 브랜치 전략 - git flow 가 보편적
+
+--------------------
+
+배포 
+2019.01.25 ~ 2020.01.25
+--------------------
